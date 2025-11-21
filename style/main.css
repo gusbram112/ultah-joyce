@@ -96,14 +96,6 @@ body {
   border-radius: 10px;
 }
 
-/* TOPI */
-.six .hat {
-  position: absolute;
-  width: 55px;
-  top: -14%;
-  left: 50%;
-  transform: translateX(-50%);
-}
 
 /* UCAPAN */
 .wish-hbd {
@@ -153,10 +145,6 @@ body {
     font-size: 2.4rem;
   }
 
-  .six .hat {
-    width: 48px;
-    top: -12%;
-  }
 
   .text-box .fake-btn {
     bottom: -35px;
@@ -174,8 +162,4 @@ body {
     font-size: 2.9rem;
   }
 
-  .six .hat {
-    width: 60px;
-    top: -15%;
-  }
 }
