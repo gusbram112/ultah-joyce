@@ -6,35 +6,34 @@ body {
   background: linear-gradient(180deg, #ffe6f2, #ffd9ec);
   font-family: 'Poppins', sans-serif;
   margin: 0;
+  overflow-x: hidden;
 }
 
 .song {
   visibility: hidden;
 }
 
+/* FIX: Hilangkan absolute layout yang bikin kacau */
 .container {
-  height: 100vh;
+  width: 100%;
+  max-width: 700px;
   margin: 0 auto;
-  overflow: hidden;
-  position: relative;
+  padding: 40px 15px;
   text-align: center;
   visibility: hidden;
-  width: 100vw;
 }
 
+/* Setiap slide tampil normal, bukan absolute */
 .container > div {
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 20vh;
+  margin: 60px 0;
+  position: relative;
 }
 
-/* ======================= */
-/*   TEXT SECTIONS         */
-/* ======================= */
+/* ================= TEXT =================== */
 
-.one {
-  font-size: 3.8rem;
+.one h1 {
+  font-size: 3rem;
+  margin: 0;
 }
 
 .two {
@@ -42,138 +41,111 @@ body {
   font-weight: 300;
 }
 
-.three {
-  font-size: 2.8rem;
-}
-
-/* ======================= */
-/*       CHAT BOX          */
-/* ======================= */
+/* ================= CHATBOX ================= */
 
 .four .text-box {
   border: 3px solid #aaa;
-  border-radius: 10px;
+  border-radius: 8px;
+  padding: 14px;
   margin: 0 auto;
-  padding: 15px;
+  width: 90%;
+  max-width: 480px;
   position: relative;
-  width: 480px;
-  max-width: 90%;
-  background: white;
 }
 
 .text-box p {
-  margin: 0;
   text-align: left;
+  font-size: 1rem;
+  line-height: 1.6rem;
+  margin: 0;
 }
 
-.text-box .fake-btn {
-  background-color: #ff77b7;
-  border-radius: 6px;
-  bottom: -45px;
-  color: #fff;
-  padding: .45rem 1.2rem;
+.fake-btn {
   position: absolute;
-  right: 50%;
-  transform: translateX(50%);
-  font-size: 0.95rem;
+  bottom: -42px;
+  right: 15px;
+  background: rgb(21,161,237);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 6px;
   cursor: pointer;
 }
 
-/* ======================= */
-/*       BIG TEXT          */
-/* ======================= */
+/* ================= KALIMAT ================= */
 
 .five p {
   font-size: 1.8rem;
-  left: 0;
-  right: 0;
-  position: absolute;
+  margin: 20px 0;
+  padding: 0 10px;
 }
 
-.five .idea-5 {
-  font-size: 3.2rem;
-}
-
-/* ======================= */
-/*   PHOTO SECTION         */
-/* ======================= */
+/* ================= FOTO ================= */
 
 .six {
+  margin-top: 40px;
   position: relative;
-  top: 10vh;
-  z-index: 1;
 }
 
-/* ✔ FOTO RESPONSIVE FIXED */
-.six img {
-  display: block;
+.profile-picture {
   width: 100%;
-  max-width: 500px;   /* FOTO TIDAK PERNAH LEBIH DARI 500PX */
-  height: auto;       /* Biar tidak tinggi */
+  max-width: 420px;
+  height: auto;
+  border-radius: 10px;
+  display: block;
   margin: 0 auto;
-  border-radius: 12px;
 }
 
-/* TOPI */
-.six .hat {
+/* TOPI SELALU DI ATAS FOTO */
+.hat {
   position: absolute;
-  top: -10%;
+  width: 65px;
+  top: -40px;
   left: 50%;
-  width: 70px;
   transform: translateX(-50%) rotate(-10deg);
-  z-index: 5;
 }
 
-/* ======================= */
-/*  WISH TEXT              */
-/* ======================= */
+/* ================= UCAPAN ================= */
 
 .wish-hbd {
   font-family: 'Sacramento', cursive;
-  font-size: 3.5rem;
-  margin: 10px 0 0;
-  color: #ff82b4;
+  font-size: 3rem;
+  margin-top: 20px;
+  color: #ff5ca7;
 }
 
 .wish h5 {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 300;
-  margin-top: 8px;
+  line-height: 1.7rem;
+  padding: 0 15px;
 }
 
-/* ======================= */
-/*  FINAL TEXT             */
-/* ======================= */
+/* ================= FOOTER ================= */
 
 .nine p {
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   font-weight: 300;
+  padding: 0 10px;
 }
 
-#replay {
-  cursor: pointer;
-  color: #ff5fa2;
-}
+/* ================= RESPONSIVE ================= */
 
-/* ======================= */
-/*    MOBILE FRIENDLY      */
-/* ======================= */
+@media (max-width: 480px) {
 
-@media screen and (max-width: 500px) {
-  .one { font-size: 2.9rem; }
-  .three { font-size: 2.2rem; }
-
-  .six img {
-    max-width: 92%; /* Sedikit lebih kecil di HP */
+  .one h1 {
+    font-size: 2.4rem;
   }
 
-  .six .hat {
-    width: 50px;
-    top: -12%;
+  .three p {
+    font-size: 1.9rem;
   }
 
-  .wish-hbd { font-size: 2.5rem; }
-  .wish h5 { font-size: 1.2rem; }
+  .wish-hbd {
+    font-size: 2.5rem;
+  }
 
-  .nine p { font-size: 1.3rem; }
+  .hat {
+    width: 52px;
+    top: -30px;
+  }
 }
