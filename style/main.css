@@ -12,10 +12,6 @@ body {
   visibility: hidden;
 }
 
-/* ======================= */
-/*     CONTAINER UTAMA     */
-/* ======================= */
-
 .container {
   height: 100vh;
   margin: 0 auto;
@@ -33,9 +29,51 @@ body {
   top: 20vh;
 }
 
-/* ======================= */
-/*        TEXT SLIDE       */
-/* ======================= */
+/* ======================== */
+/* FIX CHATBOX & TOMBOL     */
+/* ======================== */
+
+.four {
+  display: flex;
+  justify-content: center;
+}
+
+.four .text-box {
+  border: 3px solid #aaa;
+  border-radius: 5px;
+  margin: 0 auto;
+  padding: 15px;
+  width: 600px;
+  position: relative;
+
+  /* membuat layout normal */
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.text-box p {
+  margin: 0;
+  text-align: left;
+}
+
+.text-box .fake-btn {
+  background-color: rgb(21, 161, 237);
+  border-radius: 4px;
+
+  /* HAPUS absolute → diganti block */
+  position: relative;
+  align-self: flex-end;
+
+  padding: .5rem 1.3rem;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* ======================== */
+/* BAGIAN TULISAN           */
+/* ======================== */
 
 .one {
   font-size: 4.5rem;
@@ -50,66 +88,8 @@ body {
   font-size: 3rem;
 }
 
-/* ======================= */
-/*        CHAT BOX         */
-/* ======================= */
-
-.four .text-box {
-  border: 3px solid #aaa;
-  border-radius: 10px;
-  margin: 0 auto;
-  padding: 15px 15px 55px; /* ruang bawah untuk tombol */
-  position: relative;
-  width: 600px;
-  max-width: 90%;
-  background: white;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
-.text-box p {
-  margin: 0;
-  text-align: left;
-  font-size: 1rem;
-  line-height: 1.6;
-}
-
-.text-box span {
-  visibility: hidden;
-}
-
-/* FIX: tombol Kirim selalu dalam box */
-.text-box .fake-btn {
-  background-color: #ff76b8;
-  border-radius: 6px;
-  bottom: 12px;
-  right: 15px;
-  color: #fff;
-  padding: .5rem 1.2rem;
-  position: absolute;
-  font-size: .9rem;
-  cursor: pointer;
-  transition: .2s;
-}
-
-.text-box .fake-btn:hover {
-  opacity: 0.85;
-}
-
-/* ======================= */
-/*         KALIMAT         */
-/* ======================= */
-
 .five p {
   font-size: 2rem;
-  left: 0;
-  position: absolute;
-  right: 0;
-}
-
-.idea-3 strong {
-  border-radius: 3px;
-  display: inline-block;
-  padding: 3px 5px;
 }
 
 .five .idea-5 {
@@ -117,8 +97,7 @@ body {
 }
 
 .idea-5 span,
-.idea-6 span,
-.wish-hbd span {
+.idea-6 span {
   display: inline-block;
 }
 
@@ -126,96 +105,33 @@ body {
   font-size: 15rem;
 }
 
-/* ======================= */
-/*      FOTO + TOPI        */
-/* ======================= */
+/* ======================== */
+/* FOTO & TOPI              */
+/* ======================== */
 
 .six {
   position: relative;
   top: 10vh;
-  z-index: 1;
 }
 
 .six img {
+  height: 350px;
+  max-width: 100%;
   display: inline-block;
-  max-width: 90%;
-  height: auto;
-  border-radius: 10px;
+  border-radius: 12px;
 }
 
-/* TOPI */
 .six .hat {
-  left: 55%;
+  left: 50%;
   position: absolute;
-  top: -12%;
+  top: -15%;
   width: 80px;
   transform: translateX(-50%) rotate(-12deg);
 }
 
-/* ======================= */
-/*         CONFETTI        */
-/* ======================= */
-
-.seven,
-.eight {
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  width: 100vw;
-}
-
-.eight svg {
-  left: 0;
-  position: absolute;
-  top: 0;
-  visibility: hidden;
-  width: 25px;
-  z-index: -1;
-}
-
-.eight svg:nth-child(1) { fill: #bd6ecf; left: 5vw; top: 7vh; }
-.eight svg:nth-child(2) { fill: #7dd175; left: 35vw; top: 23vh; }
-.eight svg:nth-child(3) { fill: #349d8b; left: 23vw; top: 33vh; }
-.eight svg:nth-child(4) { fill: #347a9d; left: 57vw; top: 43vh; }
-.eight svg:nth-child(5) { fill: #c66053; left: 7vw; top: 68vh; }
-.eight svg:nth-child(6) { fill: #bfaa40; left: 77vw; top: 42vh; }
-.eight svg:nth-child(7) { fill: #e3bae8; left: 83vw; top: 68vh; }
-.eight svg:nth-child(8) { fill: #8762cb; left: 37vw; top: 86vh; }
-.eight svg:nth-child(9) { fill: #9a90da; left: 87vw; top: 94vh; }
-
-/* ======================= */
-/*   TEKS UCAPAN + AKHIR   */
-/* ======================= */
-
-.wish-hbd {
-  font-family: 'Sacramento', cursive;
-  font-size: 4rem;
-  margin: 0;
-  text-transform: none;
-  color: #ff82b4;
-}
-
-.wish h5 {
-  font-size: 2rem;
-  font-weight: lighter;
-  margin: 10px 0 0;
-}
-
-.nine p {
-  font-size: 2rem;
-  font-weight: lighter;
-}
-
-#replay {
-  cursor: pointer;
-  z-index: 3;
-  color: #ff5fa2;
-  text-decoration: underline;
-}
-
-/* ======================= */
-/*      RESPONSIVE HP      */
-/* ======================= */
+/* ======================== */
+/* RESPONSIVE               */
+/* ======================== */
 
 @media screen and (max-width: 500px) {
   .container {
@@ -226,26 +142,18 @@ body {
     width: 90%;
   }
 
+  .text-box .fake-btn {
+    align-self: center;
+    font-size: 0.9rem;
+    padding: .5rem 1rem;
+  }
+
   .six img {
-    width: 90%;
+    max-width: 85%;
   }
 
   .six .hat {
     width: 55px;
     top: -18%;
-    left: 50%;
-    transform: translateX(-50%) rotate(-8deg);
-  }
-
-  .wish-hbd {
-    font-size: 3rem;
-  }
-
-  .wish h5 {
-    font-size: 1.4rem;
-  }
-
-  .nine p {
-    font-size: 1.5rem;
   }
 }
