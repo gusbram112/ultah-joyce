@@ -13,27 +13,32 @@ body {
 }
 
 /* ======================= */
-/*  FIX RESPONSIVE UTAMA   */
+/*     FIX FUNDAMENTAL     */
 /* ======================= */
 
 .container {
   min-height: 100vh;
+  width: 100%;
   margin: 0 auto;
   position: relative;
   text-align: center;
   overflow-x: hidden;
   overflow-y: visible;
   visibility: hidden;
-  width: 100%;
 }
 
-/* Semua section jadi natural flow */
+/* Perbaiki bug: animasi dorong ke bawah */
 .container > div {
-  position: relative;
-  margin-top: 40px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 20vh;
 }
 
-/* TEXT AWAL */
+/* ======================= */
+/*         TEXT AWAL       */
+/* ======================= */
+
 .one h1 {
   font-size: 3.2rem;
   margin-bottom: 10px;
@@ -50,14 +55,18 @@ body {
   margin-top: 10px;
 }
 
-/* CHAT BOX */
+/* ======================= */
+/*        CHAT BOX         */
+/* ======================= */
+
 .four .text-box {
   border: 3px solid #aaa;
   border-radius: 5px;
-  margin: 20px auto;
   padding: 10px;
+  margin: 0 auto;
   width: 90%;
   max-width: 500px;
+  position: relative;
 }
 
 .text-box p {
@@ -78,42 +87,48 @@ body {
   font-size: 0.9rem;
 }
 
-/* BAGIAN KALIMAT */
+/* ======================= */
+/*      BAGIAN KALIMAT     */
+/* ======================= */
+
 .five p {
   font-size: 1.6rem;
   padding: 0 20px;
 }
 
-/* FOTO */
+/* ======================= */
+/*           FOTO          */
+/* ======================= */
+
 .six {
-  margin-top: 30px;
-  position: relative;
+  top: 18vh;
+  position: absolute;
 }
 
 .six img.profile-picture {
-  width: 92%;
+  width: 90%;
   height: auto;
-  border-radius: 10px;
+  border-radius: 12px;
 }
 
-/* ======================= */
-/*    TOPI DI ATAS FOTO    */
-/* ======================= */
-
+/* TOPI */
 .six .hat {
   position: absolute;
   width: 55px;
-  top: -14%;
+  top: -15%;
   left: 50%;
   transform: translateX(-50%);
   z-index: 10;
 }
 
-/* UCAPAN */
+/* ======================= */
+/*         UCAPAN          */
+/* ======================= */
+
 .wish-hbd {
   font-family: 'Sacramento', cursive;
   font-size: 2.8rem;
-  margin-top: 15px;
+  margin-top: 20px;
   color: #ff5ca7;
 }
 
@@ -124,7 +139,10 @@ body {
   line-height: 1.8rem;
 }
 
-/* AKHIRAN */
+/* ======================= */
+/*        SLIDE AKHIR      */
+/* ======================= */
+
 .nine p {
   font-size: 1.3rem;
   padding: 0 25px;
@@ -138,12 +156,29 @@ body {
   text-decoration: underline;
 }
 
-/* ======================= */
-/*  iPhone SMALL DEVICES   */
-/* ======================= */
+/* ======================================================= */
+/*          RESPONSIVE — IPHONE FIX (PENTING BANGET)       */
+/* ======================================================= */
 
-/* iPhone 6/7/8/SE/11/12/13 Mini */
-@media screen and (max-width: 390px) {
+@media screen and (max-width: 500px) {
+
+  /* Override absolute → biar tidak turun makin lama */
+  .container > div {
+    position: relative !important;
+    top: 0 !important;
+    margin-top: 40px !important;
+    transform: none !important;
+  }
+
+  /* Dengan ini: animasi GSAP tidak dorong slide ke bawah */
+  .one, .two, .three, .four, .five, .six, .seven, .eight, .nine {
+    transform: none !important;
+  }
+
+  /* Balon & confetti tetap fixed supaya efeknya jalan */
+  .seven, .eight {
+    position: fixed !important;
+  }
 
   .one h1 {
     font-size: 2.6rem;
@@ -153,14 +188,17 @@ body {
     font-size: 2rem;
   }
 
-  .wish-hbd {
-    font-size: 2.4rem;
+  .six img.profile-picture {
+    width: 92%;
   }
 
-  /* topi lebih kecil */
   .six .hat {
     width: 48px;
     top: -12%;
+  }
+
+  .wish-hbd {
+    font-size: 2.4rem;
   }
 
   .text-box .fake-btn {
@@ -168,10 +206,7 @@ body {
   }
 }
 
-/* ======================= */
-/*  iPhone PRO / PRO MAX   */
-/* ======================= */
-
+/* iPhone Pro / Pro Max */
 @media screen and (min-width: 400px) and (max-width: 430px) {
 
   .one h1 {
