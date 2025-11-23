@@ -8,13 +8,32 @@ body {
   margin: 0;
 }
 
-.song {
-  visibility: hidden;
+/* ======================= */
+/* Tombol Play Musik (HP) */
+/* ======================= */
+.start-btn {
+  position: fixed;
+  top: 40vh;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 14px 28px;
+  font-size: 1.2rem;
+  background: #ff8fc7;
+  border: none;
+  border-radius: 12px;
+  color: white;
+  z-index: 9999;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
 }
 
-/* ======================= */
-/*   STRUKTUR ASLI GSAP    */
-/* ======================= */
+.start-btn:active {
+  transform: translateX(-50%) scale(0.95);
+}
+
+/* ===================================================== */
+/*      STRUKTUR WAJIB UNTUK GSAP (JANGAN DIUBAH)        */
+/* ===================================================== */
 
 .container {
   min-height: 100vh;
@@ -27,7 +46,7 @@ body {
   visibility: hidden;
 }
 
-/* WAJIB: semua slide bertumpuk untuk animasi GSAP */
+/* Semua slide bertumpuk */
 .container > div {
   position: absolute;
   left: 0;
@@ -41,7 +60,6 @@ body {
 
 .one h1 {
   font-size: 3.2rem;
-  margin-bottom: 10px;
 }
 
 .two {
@@ -84,7 +102,7 @@ body {
 }
 
 /* ======================= */
-/*      KALIMAT KHUSUS     */
+/*      BAGIAN KALIMAT     */
 /* ======================= */
 
 .five p {
@@ -93,7 +111,7 @@ body {
 }
 
 /* ======================= */
-/*     FOTO + UCAPAN       */
+/*     FOTO & UCAPAN       */
 /* ======================= */
 
 .six img.profile-picture {
@@ -115,7 +133,7 @@ body {
 }
 
 /* ======================= */
-/*       SLIDE AKHIR       */
+/*        SLIDE AKHIR      */
 /* ======================= */
 
 .nine p {
@@ -130,13 +148,12 @@ body {
   text-decoration: underline;
 }
 
-/* ================================================= */
-/*     RESPONSIVE — FIX SLIDE TURUN DI iPHONE       */
-/* ================================================= */
+/* ===================================================== */
+/*    FIX UTAMA: MOBILE RESPONSIVE TANPA SLIDE TURUN     */
+/* ===================================================== */
 
 @media screen and (max-width: 500px) {
 
-  /* DEBUG FIX PENTING */
   .container > div {
     position: relative !important;
     top: 0 !important;
@@ -144,27 +161,17 @@ body {
     transform: none !important;
   }
 
-  /* Animasi GSAP tidak boleh dorong slide */
-  .one, .two, .three, .four, .five, .six, .seven, .eight, .nine {
+  .one, .three, .four, .five, .six, .seven, .eight, .nine {
     transform: none !important;
   }
 
-  /* Confetti & balloon tetap fixed */
   .seven, .eight {
     position: fixed !important;
   }
 
-  .one h1 {
-    font-size: 2.6rem;
-  }
-
-  .three {
-    font-size: 2rem;
-  }
-
-  .wish-hbd {
-    font-size: 2.4rem;
-  }
+  .one h1 { font-size: 2.6rem; }
+  .three { font-size: 2rem; }
+  .wish-hbd { font-size: 2.4rem; }
 }
 
 /* iPhone Pro / Pro Max */
