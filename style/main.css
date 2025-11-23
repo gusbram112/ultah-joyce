@@ -1,5 +1,6 @@
 html {
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -8,158 +9,155 @@ body {
   margin: 0;
 }
 
-.song {
+.song { visibility: hidden; }
+
+/* ===========================
+   CONTAINER ANIMASI GSAP
+=========================== */
+.container {
+  height: 100vh;
+  width: 100vw;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
   visibility: hidden;
 }
 
-/* ========================= */
-/*   CONTAINER FIXED CLEAN   */
-/* ========================= */
-.container {
-  width: 100%;
-  min-height: 100vh;
-  text-align: center;
-  overflow-x: hidden;
-  visibility: hidden; /* GSAP handle */
-  position: relative;
-}
-
-/* ! FIX UTAMA — HILANGKAN ABSOLUTE DI SINI ! */
 .container > div {
-  position: relative;
-  margin-top: 55px;     /* Agar tiap slide punya jarak */
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
-/* ========================= */
-/*          TEXT AWAL        */
-/* ========================= */
-.one h1 {
-  font-size: 3.4rem;
-  margin-bottom: 10px;
+/* ===========================
+      TEKS AWAL
+=========================== */
+.one {
+  font-size: 4rem;
 }
 
 .two {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-weight: 300;
-  padding: 0 20px;
 }
 
+/* ===========================
+      TEKS SLIDE 3
+=========================== */
 .three {
-  font-size: 2.4rem;
+  font-size: 2.7rem;
 }
 
-/* ========================= */
-/*         CHAT BOX          */
-/* ========================= */
+/* ===========================
+      CHAT BOX
+=========================== */
 .four .text-box {
   border: 3px solid #aaa;
-  border-radius: 6px;
-  padding: 12px;
-  margin: 20px auto;
+  border-radius: 10px;
+  padding: 20px;
   width: 90%;
-  max-width: 550px;
-  background: rgba(255,255,255,0.4);
-}
-
-.text-box p {
-  margin: 0;
-  text-align: left;
-  line-height: 1.6rem;
-}
-
-.text-box .fake-btn {
-  position: absolute;
-  right: 12px;
-  bottom: -40px;
-  background: #15a1ed;
-  color: white;
-  padding: 0.4rem 1.3rem;
-  border-radius: 5px;
-  font-size: 0.9rem;
-}
-
-/* ========================= */
-/*           MESSAGE         */
-/* ========================= */
-.five p {
-  font-size: 1.7rem;
-  padding: 0 20px;
-}
-
-.idea-5 {
-  font-size: 3rem;
-}
-
-/* ========================= */
-/*            FOTO           */
-/* ========================= */
-.six {
-  margin-top: 30px;
+  max-width: 600px;
+  background: white;
+  margin: auto;
   position: relative;
 }
 
+.text-box p {
+  text-align: left;
+  font-size: 1.1rem;
+  line-height: 1.6rem;
+}
+
+.fake-btn {
+  background-color: #ff72b6;
+  border-radius: 7px;
+  color: #fff;
+  padding: 0.6rem 1.5rem;
+  font-weight: 600;
+  cursor: pointer;
+
+  position: absolute;
+  left: 50%;
+  bottom: -50px;
+  transform: translateX(-50%);
+}
+
+/* ===========================
+      SLIDE 5
+=========================== */
+.five p {
+  font-size: 2rem;
+  line-height: 2.6rem;
+}
+
+/* ===========================
+      FOTO
+=========================== */
 .six img.profile-picture {
-  width: 92%;
-  height: auto;
+  width: 80%;
+  max-width: 380px;
   border-radius: 12px;
 }
 
-/* Topi */
+/* TOPI */
 .six .hat {
   position: absolute;
-  width: 55px;
-  top: -12%;
+  width: 70px;
+  top: -18%;
   left: 50%;
   transform: translateX(-50%) rotate(-10deg);
-  z-index: 10;
 }
 
-/* ========================= */
-/*         UCAPAN HBD        */
-/* ========================= */
+/* ===========================
+      UCAPAN
+=========================== */
 .wish-hbd {
-  font-family: 'Sacramento', cursive;
-  font-size: 3rem;
-  margin-top: 15px;
-  color: #ff5ca7;
+  font-family: "Sacramento", cursive;
+  font-size: 4rem;
+  margin: 10px 0;
+  color: #ff61a6;
 }
 
 .wish h5 {
   font-size: 1.4rem;
-  line-height: 1.9rem;
-  padding: 0 20px;
+  font-weight: 300;
+  width: 90%;
+  margin: 0 auto;
+  line-height: 2rem;
 }
 
-/* ========================= */
-/*          END TEXT         */
-/* ========================= */
+/* ===========================
+      SLIDE AKHIR
+=========================== */
 .nine p {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
+  font-weight: 300;
   padding: 0 20px;
-  line-height: 1.9rem;
+  line-height: 2.2rem;
 }
 
 #replay {
-  cursor: pointer;
   color: #ff5fa2;
+  text-decoration: underline;
+  cursor: pointer;
 }
 
-/* ========================= */
-/*      MOBILE RESPONSIVE    */
-/* ========================= */
-
-@media screen and (max-width: 400px) {
-  .one h1 { font-size: 2.7rem; }
+/* ===========================
+      RESPONSIVE HP
+=========================== */
+@media (max-width: 500px) {
+  .one { font-size: 2.6rem; }
+  .two { font-size: 1rem; }
   .three { font-size: 2rem; }
 
-  .six .hat { width: 48px; top: -10%; }
+  .five p {
+    font-size: 1.5rem;
+    line-height: 2.1rem;
+  }
 
-  .wish-hbd { font-size: 2.5rem; }
-  .wish h5 { font-size: 1.2rem; }
-}
+  .six img.profile-picture { width: 85%; }
 
-@media screen and (min-width: 430px) {
-  .one h1 { font-size: 3rem; }
-  .wish-hbd { font-size: 3.2rem; }
-  .six .hat { width: 60px; top: -15%; }
-}
+  .six .hat {
+    width: 50px
