@@ -6,166 +6,172 @@ body {
   background: linear-gradient(180deg, #ffe6f2, #ffd9ec);
   font-family: 'Poppins', sans-serif;
   margin: 0;
+  padding: 0;
+  overflow-x: hidden;
 }
 
 .song {
   visibility: hidden;
 }
 
-/* ===================================================== */
-/*      STRUKTUR WAJIB UNTUK GSAP (JANGAN DIUBAH)        */
-/* ===================================================== */
-
 .container {
-  min-height: 100vh;
-  width: 100%;
+  height: 100vh;
+  width: 100vw;
   margin: 0 auto;
+  overflow: hidden;
   position: relative;
   text-align: center;
-  overflow-x: hidden;
-  overflow-y: visible;
   visibility: hidden;
 }
 
-/* Semua slide bertumpuk pada posisi sama */
 .container > div {
   position: absolute;
   left: 0;
   right: 0;
-  top: 20vh;
+  top: 18vh;
 }
 
-
-/* ======================= */
-/*         TEXT AWAL       */
-/* ======================= */
-
-.one h1 {
-  font-size: 3.2rem;
+/* ====== TEXT SIZE DESKTOP ====== */
+.one {
+  font-size: 4rem;
 }
 
 .two {
-  font-size: 1.1rem;
-  padding: 0 20px;
-  font-weight: 300;
+  font-size: 1.4rem;
 }
 
 .three {
-  font-size: 2.3rem;
+  font-size: 2.8rem;
 }
-
-
-/* ======================= */
-/*        CHAT BOX         */
-/* ======================= */
 
 .four .text-box {
   border: 3px solid #aaa;
-  border-radius: 5px;
-  width: 90%;
-  max-width: 500px;
-  padding: 10px;
+  border-radius: 10px;
   margin: 0 auto;
-  position: relative;
+  padding: 12px;
+  width: 600px;
 }
 
 .text-box p {
   text-align: left;
-  line-height: 1.6rem;
 }
 
-.fake-btn {
-  background-color: #14a1ed;
-  color: #fff;
-  padding: .5rem 1.2rem;
+.text-box .fake-btn {
+  background-color: #ff8bb3;
   border-radius: 5px;
+  padding: 8px 18px;
+  bottom: -45px;
+  right: 15px;
   position: absolute;
-  right: 10px;
-  bottom: -40px;
+  color: white;
 }
-
-
-/* ======================= */
-/*     BAGIAN KALIMAT      */
-/* ======================= */
 
 .five p {
-  font-size: 1.6rem;
-  padding: 0 20px;
+  font-size: 2rem;
+  margin: 0 20px;
 }
 
+.five .idea-5 {
+  font-size: 3.5rem;
+}
 
-/* ======================= */
-/*     FOTO & UCAPAN       */
-/* ======================= */
+.idea-6 span {
+  font-size: 10rem;
+}
+
+/* ======= PHOTO SECTION ======= */
+.six {
+  top: 10vh;
+  position: relative;
+}
 
 .six img.profile-picture {
-  width: 90%;
-  border-radius: 12px;
+  width: 75%;
+  max-width: 350px;
+  border-radius: 10px;
+}
+
+.six .hat {
+  position: absolute;
+  width: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -70px;
 }
 
 .wish-hbd {
-  font-family: 'Sacramento', cursive;
   font-size: 3rem;
-  color: #ff5ca7;
 }
 
 .wish h5 {
-  font-size: 1.2rem;
-  padding: 0 20px;
+  font-size: 1.6rem;
   font-weight: 300;
-  line-height: 1.8rem;
 }
 
-
-/* ======================= */
-/*        SLIDE AKHIR      */
-/* ======================= */
-
-.nine p {
-  font-size: 1.3rem;
-  padding: 0 25px;
-  line-height: 1.8rem;
-}
-
-#replay {
-  cursor: pointer;
-  color: #ff5fa2;
-  text-decoration: underline;
-}
-
-
-/* ===================================================== */
-/*    FIX UTAMA: MOBILE RESPONSIVE TANPA SLIDE TURUN     */
-/* ===================================================== */
-
-@media screen and (max-width: 500px) {
-
-  /* Jadikan flow normal di HP */
+/* ====== MOBILE RESPONSIVE ====== */
+@media (max-width: 600px) {
   .container > div {
-    position: relative !important;
-    top: 0 !important;
-    margin-top: 40px !important;
-    transform: none !important;
+    top: 13vh;
   }
 
-  /* Matikan transform GSAP agar tak geser */
-  .one, .three, .four, .five, .six, .seven, .eight, .nine {
-    transform: none !important;
+  .one {
+    font-size: 2.3rem;
   }
 
-  /* Efek balon / confetti tetap fixed */
-  .seven, .eight {
-    position: fixed !important;
+  .two {
+    font-size: 1rem;
+    padding: 0 15px;
   }
 
-  .one h1 { font-size: 2.6rem; }
-  .three { font-size: 2rem; }
-  .wish-hbd { font-size: 2.4rem; }
-}
+  .three {
+    font-size: 1.8rem;
+    padding: 0 15px;
+  }
 
-/* Untuk iPhone Pro/Max */
-@media screen and (min-width: 400px) and (max-width: 430px) {
-  .one h1 { font-size: 3rem; }
-  .wish-hbd { font-size: 2.9rem; }
+  .four .text-box {
+    width: 85%;
+  }
+
+  .text-box .fake-btn {
+    bottom: -35px;
+    font-size: 0.9rem;
+  }
+
+  .five p {
+    font-size: 1.4rem;
+  }
+
+  .five .idea-5 {
+    font-size: 2.4rem;
+  }
+
+  .idea-6 span {
+    font-size: 5rem;
+  }
+
+  /* FOTO */
+  .six img.profile-picture {
+    width: 85%;
+    max-width: 280px;
+  }
+
+  .six .hat {
+    width: 45px;
+    top: -40px;
+  }
+
+  .wish-hbd {
+    font-size: 1.8rem;
+  }
+
+  .wish h5 {
+    font-size: 1.2rem;
+    padding: 0 20px;
+  }
+
+  /* Ending */
+  .nine p {
+    font-size: 1.2rem;
+    padding: 0 20px;
+  }
 }
