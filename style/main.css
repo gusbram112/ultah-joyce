@@ -27,10 +27,10 @@ body {
   width: 100%;
 }
 
-/* semua section jangan absolute untuk mobile */
+/* Semua section jadi natural flow */
 .container > div {
   position: relative;
-  margin-top: 40px;  
+  margin-top: 40px;
 }
 
 /* TEXT AWAL */
@@ -96,6 +96,18 @@ body {
   border-radius: 10px;
 }
 
+/* ======================= */
+/*    TOPI DI ATAS FOTO    */
+/* ======================= */
+
+.six .hat {
+  position: absolute;
+  width: 55px;
+  top: -14%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
 
 /* UCAPAN */
 .wish-hbd {
@@ -145,13 +157,21 @@ body {
     font-size: 2.4rem;
   }
 
+  /* topi lebih kecil */
+  .six .hat {
+    width: 48px;
+    top: -12%;
+  }
 
   .text-box .fake-btn {
     bottom: -35px;
   }
 }
 
-/* iPhone Pro Max */
+/* ======================= */
+/*  iPhone PRO / PRO MAX   */
+/* ======================= */
+
 @media screen and (min-width: 400px) and (max-width: 430px) {
 
   .one h1 {
@@ -162,4 +182,8 @@ body {
     font-size: 2.9rem;
   }
 
+  .six .hat {
+    width: 60px;
+    top: -15%;
+  }
 }
