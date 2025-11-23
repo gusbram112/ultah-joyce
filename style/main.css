@@ -13,7 +13,7 @@ body {
 }
 
 /* ======================= */
-/*     FIX FUNDAMENTAL     */
+/*   STRUKTUR ASLI GSAP    */
 /* ======================= */
 
 .container {
@@ -27,7 +27,7 @@ body {
   visibility: hidden;
 }
 
-/* Perbaiki bug: animasi dorong ke bawah */
+/* WAJIB: semua slide bertumpuk untuk animasi GSAP */
 .container > div {
   position: absolute;
   left: 0;
@@ -46,13 +46,12 @@ body {
 
 .two {
   font-size: 1.1rem;
+  padding: 0 20px;
   font-weight: 300;
-  padding: 0 15px;
 }
 
 .three {
   font-size: 2.3rem;
-  margin-top: 10px;
 }
 
 /* ======================= */
@@ -62,33 +61,30 @@ body {
 .four .text-box {
   border: 3px solid #aaa;
   border-radius: 5px;
-  padding: 10px;
-  margin: 0 auto;
   width: 90%;
   max-width: 500px;
+  padding: 10px;
+  margin: 0 auto;
   position: relative;
 }
 
 .text-box p {
-  margin: 0;
   text-align: left;
-  font-size: 1rem;
   line-height: 1.6rem;
 }
 
-.text-box .fake-btn {
-  background-color: rgb(21, 161, 237);
-  border-radius: 5px;
-  bottom: -40px;
+.fake-btn {
+  background-color: #14a1ed;
   color: #fff;
-  padding: .4rem 1.2rem;
+  padding: .5rem 1.2rem;
+  border-radius: 5px;
   position: absolute;
   right: 10px;
-  font-size: 0.9rem;
+  bottom: -40px;
 }
 
 /* ======================= */
-/*      BAGIAN KALIMAT     */
+/*      KALIMAT KHUSUS     */
 /* ======================= */
 
 .five p {
@@ -97,56 +93,34 @@ body {
 }
 
 /* ======================= */
-/*           FOTO          */
+/*     FOTO + UCAPAN       */
 /* ======================= */
-
-.six {
-  top: 18vh;
-  position: absolute;
-}
 
 .six img.profile-picture {
   width: 90%;
-  height: auto;
   border-radius: 12px;
 }
 
-/* TOPI */
-.six .hat {
-  position: absolute;
-  width: 55px;
-  top: -15%;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 10;
-}
-
-/* ======================= */
-/*         UCAPAN          */
-/* ======================= */
-
 .wish-hbd {
   font-family: 'Sacramento', cursive;
-  font-size: 2.8rem;
-  margin-top: 20px;
+  font-size: 3rem;
   color: #ff5ca7;
 }
 
 .wish h5 {
   font-size: 1.2rem;
-  font-weight: 300;
   padding: 0 20px;
+  font-weight: 300;
   line-height: 1.8rem;
 }
 
 /* ======================= */
-/*        SLIDE AKHIR      */
+/*       SLIDE AKHIR       */
 /* ======================= */
 
 .nine p {
   font-size: 1.3rem;
   padding: 0 25px;
-  font-weight: 300;
   line-height: 1.8rem;
 }
 
@@ -156,13 +130,13 @@ body {
   text-decoration: underline;
 }
 
-/* ======================================================= */
-/*          RESPONSIVE — IPHONE FIX (PENTING BANGET)       */
-/* ======================================================= */
+/* ================================================= */
+/*     RESPONSIVE — FIX SLIDE TURUN DI iPHONE       */
+/* ================================================= */
 
 @media screen and (max-width: 500px) {
 
-  /* Override absolute → biar tidak turun makin lama */
+  /* DEBUG FIX PENTING */
   .container > div {
     position: relative !important;
     top: 0 !important;
@@ -170,12 +144,12 @@ body {
     transform: none !important;
   }
 
-  /* Dengan ini: animasi GSAP tidak dorong slide ke bawah */
+  /* Animasi GSAP tidak boleh dorong slide */
   .one, .two, .three, .four, .five, .six, .seven, .eight, .nine {
     transform: none !important;
   }
 
-  /* Balon & confetti tetap fixed supaya efeknya jalan */
+  /* Confetti & balloon tetap fixed */
   .seven, .eight {
     position: fixed !important;
   }
@@ -188,37 +162,13 @@ body {
     font-size: 2rem;
   }
 
-  .six img.profile-picture {
-    width: 92%;
-  }
-
-  .six .hat {
-    width: 48px;
-    top: -12%;
-  }
-
   .wish-hbd {
     font-size: 2.4rem;
-  }
-
-  .text-box .fake-btn {
-    bottom: -35px;
   }
 }
 
 /* iPhone Pro / Pro Max */
 @media screen and (min-width: 400px) and (max-width: 430px) {
-
-  .one h1 {
-    font-size: 3rem;
-  }
-
-  .wish-hbd {
-    font-size: 2.9rem;
-  }
-
-  .six .hat {
-    width: 60px;
-    top: -15%;
-  }
+  .one h1 { font-size: 3rem; }
+  .wish-hbd { font-size: 2.9rem; }
 }
