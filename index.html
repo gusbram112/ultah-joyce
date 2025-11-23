@@ -11,9 +11,7 @@
   <!-- Google Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&family=Sacramento&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&family=Sacramento&display=swap" rel="stylesheet">
 
   <!-- My Style -->
   <link rel="stylesheet" href="./style/main.css" />
@@ -21,69 +19,84 @@
 
 <body>
 
-  <audio class="song" loop autoplay>
-    <source src="./music/hbd.mpeg">
-    Browser kamu tidak mendukung audio.
+  <audio class="song" id="bgSong" loop>
+      <source src="./music/hbd.mpeg">
+      Browser kamu tidak mendukung audio.
   </audio>
+
+  <script>
+    // FIX MUSIK HP AGAR NYALA
+    document.addEventListener("click", function () {
+      const bgm = document.getElementById("bgSong");
+      if (bgm.paused) bgm.play().catch(()=>{});
+    }, { once: true });
+  </script>
 
   <div class="container">
 
-    <div class="one">
-      <h1 class="one">Hai <span id="name">Joyce</span></h1>
-      <p class="two" id="greetingText">Namamu selalu punya cara buat hariku terasa lebih indah.</p>
-    </div>
-
-    <div class="three">
-      <p>Hari ini adalah hari istimewamu ✨</p>
-    </div>
-
-    <div class="four">
-      <div class="text-box">
-        <p class="hbd-chatbox">
-          Selamat ulang tahun, sayang. Semoga segala hal baik selalu berada dipihakmu.
-          Kamu layak mendapatkan kebahagiaan yang lembut, tenang, dan penuh cinta—hari ini dan seterusnya.
-        </p>
-        <p class="fake-btn">Kirim</p>
+      <div class="one">
+          <h1 class="one">
+              Hai
+              <span id="name">Joyce</span>
+          </h1>
+          <p class="two" id="greetingText">Namamu selalu punya cara buat hariku terasa lebih indah.</p>
       </div>
-    </div>
 
-    <div class="five">
-      <p class="idea-1">Awalnya aku cuma mau ngucapin lewat chat doang.</p>
-      <p class="idea-2">Tapi rasanya itu kurang deh.</p>
-      <p class="idea-3">
-        Karena buat seseorang yang begitu berarti,<br>
-        aku mau kasi sesuatu yang sedikit lebih <strong>spesial</strong>
-      </p>
-      <p class="idea-4">Karena,</p>
-      <p class="idea-5">Kamu itu spesial <span>:)</span></p>
-      <p class="idea-6"><span>S</span><span>O</span></p>
-    </div>
-
-    <div class="six">
-      <img src="./img/joycee.jpeg" alt="profile" class="profile-picture" id="imagePath" />
-      <div class="wish">
-        <h3 class="wish-hbd">Selamat Ulang Tahun!</h3>
-        <h5 id="wishText">
-          Semoga langkahmu selalu dipenuhi hal-hal indah, dan semoga aku selalu bisa menjaga senyummu. ❤️
-        </h5>
+      <div class="three">
+          <p>Hari ini adalah hari istimewamu ✨</p>
       </div>
-    </div>
 
-    <div class="seven">
-      <div class="baloons"></div>
-    </div>
+      <div class="four">
+          <div class="text-box">
+              <p class="hbd-chatbox">
+                Selamat ulang tahun, sayang. Semoga segala hal baik selalu berada dipihakmu. Kamu layak mendapatkan kebahagiaan yang lembut, tenang, dan penuh cinta—hari ini dan seterusnya.
+              </p>
+              <p class="fake-btn">Kirim</p>
+          </div>
+      </div>
 
-    <div class="eight"></div>
+      <div class="five">
+          <p class="idea-1">Awalnya aku cuma mau ngucapin lewat chat doang.</p>
+          <p class="idea-2">Tapi rasanya itu kurang deh.</p>
+          <p class="idea-3">
+              Karena buat seseorang yang begitu berarti,<br>
+              aku mau kasi sesuatu yang sedikit lebih
+              <strong>spesial</strong>
+          </p>
+          <p class="idea-4">Karena,</p>
+          <p class="idea-5">
+              Kamu itu spesial <span>:)</span>
+          </p>
+          <p class="idea-6">
+              <span>S</span>
+              <span>O</span>
+          </p>
+      </div>
 
-    <div class="nine">
-      <p>Semoga kamu suka dari apa yang aku buat yaa</p>
-      <p>Atau klik <span id="replay">di sini</span> kalau mau lihat dari awal lagi.</p>
-      <p class="last-smile">:)</p>
-    </div>
+      <div class="six">
+          <img src="./img/joycee.jpeg" alt="profile" class="profile-picture" id="imagePath"/>
+          <img src="./img/hat.svg" alt="hat" class="hat" />
+          <div class="wish">
+              <h3 class="wish-hbd">Selamat Ulang Tahun!</h3>
+              <h5 id="wishText">Semoga langkahmu selalu dipenuhi hal-hal indah, dan semoga aku selalu bisa menjaga senyummu. ❤️</h5>
+          </div>
+      </div>
+
+      <div class="seven">
+          <div class="baloons"></div>
+      </div>
+
+      <div class="eight"></div>
+
+      <div class="nine">
+          <p>Semoga kamu suka dari apa yang aku buat yaa</p>
+          <p>Atau klik <span id="replay">di sini</span> kalau mau lihat dari awal lagi.</p>
+          <p class="last-smile">:)</p>
+      </div>
 
   </div>
 
-  <!-- GSAP -->
+  <!-- Greensock -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
 
   <!-- Sweetalert -->
@@ -92,5 +105,4 @@
   <script type="application/javascript" src="./script/main.js"></script>
 
 </body>
-
 </html>
