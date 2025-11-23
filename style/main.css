@@ -8,27 +8,8 @@ body {
   margin: 0;
 }
 
-/* ======================= */
-/* Tombol Play Musik (HP) */
-/* ======================= */
-.start-btn {
-  position: fixed;
-  top: 40vh;
-  left: 50%;
-  transform: translateX(-50%);
-  padding: 14px 28px;
-  font-size: 1.2rem;
-  background: #ff8fc7;
-  border: none;
-  border-radius: 12px;
-  color: white;
-  z-index: 9999;
-  cursor: pointer;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-}
-
-.start-btn:active {
-  transform: translateX(-50%) scale(0.95);
+.song {
+  visibility: hidden;
 }
 
 /* ===================================================== */
@@ -46,13 +27,14 @@ body {
   visibility: hidden;
 }
 
-/* Semua slide bertumpuk */
+/* Semua slide bertumpuk pada posisi sama */
 .container > div {
   position: absolute;
   left: 0;
   right: 0;
   top: 20vh;
 }
+
 
 /* ======================= */
 /*         TEXT AWAL       */
@@ -71,6 +53,7 @@ body {
 .three {
   font-size: 2.3rem;
 }
+
 
 /* ======================= */
 /*        CHAT BOX         */
@@ -101,14 +84,16 @@ body {
   bottom: -40px;
 }
 
+
 /* ======================= */
-/*      BAGIAN KALIMAT     */
+/*     BAGIAN KALIMAT      */
 /* ======================= */
 
 .five p {
   font-size: 1.6rem;
   padding: 0 20px;
 }
+
 
 /* ======================= */
 /*     FOTO & UCAPAN       */
@@ -132,6 +117,7 @@ body {
   line-height: 1.8rem;
 }
 
+
 /* ======================= */
 /*        SLIDE AKHIR      */
 /* ======================= */
@@ -148,12 +134,14 @@ body {
   text-decoration: underline;
 }
 
+
 /* ===================================================== */
 /*    FIX UTAMA: MOBILE RESPONSIVE TANPA SLIDE TURUN     */
 /* ===================================================== */
 
 @media screen and (max-width: 500px) {
 
+  /* Jadikan flow normal di HP */
   .container > div {
     position: relative !important;
     top: 0 !important;
@@ -161,10 +149,12 @@ body {
     transform: none !important;
   }
 
+  /* Matikan transform GSAP agar tak geser */
   .one, .three, .four, .five, .six, .seven, .eight, .nine {
     transform: none !important;
   }
 
+  /* Efek balon / confetti tetap fixed */
   .seven, .eight {
     position: fixed !important;
   }
@@ -174,7 +164,7 @@ body {
   .wish-hbd { font-size: 2.4rem; }
 }
 
-/* iPhone Pro / Pro Max */
+/* Untuk iPhone Pro/Max */
 @media screen and (min-width: 400px) and (max-width: 430px) {
   .one h1 { font-size: 3rem; }
   .wish-hbd { font-size: 2.9rem; }
