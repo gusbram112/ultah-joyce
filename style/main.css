@@ -9,11 +9,9 @@ body {
   overflow-x: hidden;
 }
 
-.song {
-  visibility: hidden;
-}
+.song { visibility: hidden; }
 
-/* FIX: Hilangkan absolute layout yang bikin kacau */
+/* ========== LAYOUT UTAMA ========== */
 .container {
   width: 100%;
   max-width: 700px;
@@ -23,14 +21,12 @@ body {
   visibility: hidden;
 }
 
-/* Setiap slide tampil normal, bukan absolute */
 .container > div {
   margin: 60px 0;
   position: relative;
 }
 
-/* ================= TEXT =================== */
-
+/* ========== TEXT ========== */
 .one h1 {
   font-size: 3rem;
   margin: 0;
@@ -41,8 +37,7 @@ body {
   font-weight: 300;
 }
 
-/* ================= CHATBOX ================= */
-
+/* ========== CHATBOX ========== */
 .four .text-box {
   border: 3px solid #aaa;
   border-radius: 8px;
@@ -57,7 +52,6 @@ body {
   text-align: left;
   font-size: 1rem;
   line-height: 1.6rem;
-  margin: 0;
 }
 
 .fake-btn {
@@ -65,22 +59,19 @@ body {
   bottom: -42px;
   right: 15px;
   background: rgb(21,161,237);
-  color: white;
+  color: #fff;
   padding: 8px 16px;
   border-radius: 6px;
   cursor: pointer;
 }
 
-/* ================= KALIMAT ================= */
-
+/* ========== KALIMAT ========== */
 .five p {
   font-size: 1.8rem;
   margin: 20px 0;
-  padding: 0 10px;
 }
 
-/* ================= FOTO ================= */
-
+/* ========== FOTO ========== */
 .six {
   margin-top: 40px;
   position: relative;
@@ -95,17 +86,7 @@ body {
   margin: 0 auto;
 }
 
-/* TOPI SELALU DI ATAS FOTO */
-.hat {
-  position: absolute;
-  width: 65px;
-  top: -40px;
-  left: 50%;
-  transform: translateX(-50%) rotate(-10deg);
-}
-
-/* ================= UCAPAN ================= */
-
+/* ========== UCAPAN ========== */
 .wish-hbd {
   font-family: 'Sacramento', cursive;
   font-size: 3rem;
@@ -120,32 +101,23 @@ body {
   padding: 0 15px;
 }
 
-/* ================= FOOTER ================= */
-
+/* ========== FOOTER ========== */
 .nine p {
   font-size: 1.4rem;
   font-weight: 300;
   padding: 0 10px;
 }
 
-/* ================= RESPONSIVE ================= */
-
+/* ========== RESPONSIVE ========== */
 @media (max-width: 480px) {
 
-  .one h1 {
-    font-size: 2.4rem;
-  }
+  .one h1 { font-size: 2.4rem; }
 
-  .three p {
-    font-size: 1.9rem;
-  }
+  .three p { font-size: 1.9rem; }
 
-  .wish-hbd {
-    font-size: 2.5rem;
-  }
+  .wish-hbd { font-size: 2.5rem; }
 
-  .hat {
-    width: 52px;
-    top: -30px;
+  .profile-picture {
+    max-width: 350px;
   }
 }
